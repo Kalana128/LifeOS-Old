@@ -6,6 +6,7 @@ import {
 
 import LoginPage from "./pages/LoginPage";
 import DashboardPage from "./pages/DashboardPage";
+import AttendancePage from "./pages/AttendancePage";
 
 function App() {
   return (
@@ -22,6 +23,15 @@ function App() {
             <DashboardPage />
           }
         />
+        <Route
+          path="/attendance"
+          element={
+            <AttendancePage />
+          }
+        />
+
+
+        
       </Routes>
     </BrowserRouter>
   );

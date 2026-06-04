@@ -5,6 +5,10 @@ const dotenv = require("dotenv");
 const connectDB = require("./src/config/database");
 const authRoutes = require("./src/routes/authRoutes");
 
+const attendanceRoutes = require(
+  "./src/routes/attendanceRoutes"
+);
+
 dotenv.config();
 
 connectDB();
@@ -15,6 +19,11 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
+
+app.use(
+  "/api/attendance",
+  attendanceRoutes
+);
 
 app.get("/", (req, res) => {
   res.send("LifeOS Backend Running 🚀");
